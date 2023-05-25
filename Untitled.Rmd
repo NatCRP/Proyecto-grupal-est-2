@@ -1,0 +1,47 @@
+---
+title: "Ejercicio sesion 3"
+author: "Nataly Romero"
+date: "2023-04-29"
+output: html_document
+---
+
+
+
+```{r}
+library(rvest)
+url = "https://es.wikipedia.org/wiki/Anexo:Salario_m%C3%ADnimo_en_Per%C3%BA#D%C3%A9cada_de_2020"
+fullxpath = '/html/body/div[3]/div[3]/div[5]/div[1]/table[2]'
+url = read_html(url)
+table = html_nodes(url, xpath= fullxpath)
+table = html_table (table)
+table =data.frame(table)
+```
+```{r}
+setwd("~/Desktop/HITHUB")
+```
+
+```{r}
+install.packages("openxlsx")
+library(openxlsx) 
+write.xlsx,"mtcars_open.xlsx", 
+```
+
+
+```{r}
+library(openxlsxl)
+data <- cars
+write.xlsxl(data, "salario.xlsx")
+write.xlsx(datos, "salario_tabla.xlsx", astable = TRUE)
+```
+
+
+```{r}
+library(rio)
+data="table"
+=import(data)
+```
+
+```{r}
+# fila 1, columna 1
+[1,1]
+```

@@ -1,0 +1,69 @@
+---
+title: "DATA3"
+author: "Nataly Romero"
+date: "2023-05-24"
+output: html_document
+---
+
+```{r}
+library(rio)
+dataINT=import("API.xls")
+```
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+dataINT=select(dataINT, c(2, 64))
+dataINT=filter(dataINT, !is.na(...64))
+names(dataINT)=c("country", "PorcentInter2019")
+dataINT=dataINT[-c(1),]#filtramos los no paises
+row.names(dataINT)=NULL
+dataINT$PorcentInter2019=as.numeric(dataINT$PorcentInter2019)
+```
+
+```{r}
+str(dataINT)
+```
+
+```{r}
+names(dataRSF)
+```
+
+
+```{r}
+dataRSF=import("2019.csv")
+```
+```{r}
+dataRSF=select(dataRSF, c(2, 4))
+names(dataRSF)=c("country", "PorcentRSF2019")
+dataRSF$PorcentRSF2019=gsub(",",".", dataRSF$PorcentRSF2019)
+dataRSF$PorcentRSF2019=as.numeric(dataRSF$PorcentRSF2019)
+```
+
+```{r}
+setdiff(dataINT$country,dataRSF$country)
+```
+```{r}
+merge1=inner_join(dataINT,dataRSF)
+```
+```{r}
+merge2=inner_join(merge1, )
+```
+
+
+```{r}
+str(dataRSF)
+```
+#FUERZA MILITAR
+```{r}
+library(rio)
+dataFORCE=import("https://docs.google.com/spreadsheets/d/1-bKvR7hQyQa_aU6Au0JTkedfA6OUSxSb1nFCR-npx3M/edit#gid=542562591")
+```
+
+```{r}
+library(rio)
+dataPBB=import("PPB.xls")
+```
+

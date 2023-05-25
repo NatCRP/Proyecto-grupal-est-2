@@ -1,0 +1,17 @@
+---
+title: "SESION 3 GR"
+author: "Nataly Romero"
+date: "2023-04-29"
+output: html_document
+---
+```{r}
+setwd("~/Desktop/EJERCICO 1 - MAGALLANES")
+```
+
+```{r}
+library(rio)
+data=import("wbDataMini.xlsx")
+```
+
+
+
